@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <declare-styleable name="TitleBar">
+
+        <attr name="mText" format="string"/>
+        <attr name="mTextSize" format="dimension"/>
+        <attr name="mTextBackgroup" format="color"/>
+        <attr name="mBackgroup" format="color"/>
+
+        <attr name="img_imageView" format="reference"/>
+
+        <attr name="mTextSearch" format="string"/>
+        <attr name="mTextSearchSize" format="dimension"/>
+        <attr name="mTextSearchBackgroup" format="color"/>
+        <attr name="mSearchBackgroup" format="color"/>
+
+    </declare-styleable>
+</resources>
