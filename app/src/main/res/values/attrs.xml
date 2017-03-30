@@ -11,6 +11,7 @@
 
         <attr name="mTextSearch" format="string"/>
         <attr name="mTextSearchSize" format="dimension"/>
+        <attr name="mTextSearchPadding" format="dimension"/>
         <attr name="mTextSearchBackgroup" format="color"/>
         <attr name="mSearchBackgroup" format="color"/>
 

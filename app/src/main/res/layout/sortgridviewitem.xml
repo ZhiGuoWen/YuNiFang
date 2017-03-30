@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:orientation="vertical" android:layout_width="match_parent"
+    android:layout_height="match_parent">
+    <TextView
+        android:background="@drawable/frame"
+        android:gravity="center"
+        android:textSize="20dp"
+        android:padding="5dp"
+        android:id="@+id/sortitem_title"
+        android:layout_width="wrap_content"
+        android:layout_height="40dp" />
+</LinearLayout>

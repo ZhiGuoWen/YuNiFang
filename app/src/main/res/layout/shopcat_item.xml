@@ -1,0 +1,49 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:id="@+id/shop_relative"
+    android:layout_height="80dp"
+    android:padding="8dp">
+
+    <CheckBox
+        android:id="@+id/shopcat_item_box"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_centerVertical="true" />
+
+    <ImageView
+        android:id="@+id/shopcat_item_img"
+        android:layout_width="80dp"
+        android:layout_height="80dp"
+        android:layout_toRightOf="@id/shopcat_item_box"
+        android:layout_marginLeft="8dp"
+        android:background="@drawable/ic_launcher"/>
+
+    <TextView
+        android:id="@+id/shopcat_item_name"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="name"
+        android:layout_marginLeft="8dp"
+        android:layout_toRightOf="@id/shopcat_item_img"/>
+
+
+    <TextView
+        android:id="@+id/shopcat_item_price"
+        android:text="价格"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_toRightOf="@id/shopcat_item_img"
+        android:layout_marginLeft="8dp"
+        android:layout_alignParentBottom="true"
+        android:textColor="#f00"/>
+
+    <TextView
+        android:id="@+id/shopcat_item_count"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentBottom="true"
+        android:layout_toRightOf="@id/shopcat_item_price"
+        android:layout_marginLeft="8dp"
+        android:text="数量：1"/>
+</RelativeLayout>

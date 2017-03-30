@@ -1,13 +1,132 @@
-<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    android:orientation="vertical"
     tools:context="com.wenzhiguo.yunifang.fragment.ShoppingFragment">
 
-    <!-- TODO: Update blank fragment layout -->
-    <TextView
+    <com.wenzhiguo.yunifang.Custom.TitleBar
+        android:id="@+id/shopping_editer"
+        android:layout_width="match_parent"
+        android:layout_height="50dp"
+        app:mText="购物车"
+        app:mTextSearch="编辑" />
+
+    <View
+        android:id="@+id/shopping_view"
+        android:layout_width="match_parent"
+        android:layout_height="3dp"
+        android:layout_below="@id/shopping_editer"
+        android:background="#778899" />
+
+    <LinearLayout
+        android:id="@+id/shopping_line"
+        android:layout_width="match_parent"
+        android:layout_height="60dp"
+        android:layout_alignParentBottom="true"
+        android:background="@drawable/frame"
+        android:orientation="horizontal">
+
+        <CheckBox
+            android:id="@+id/all_checked"
+            android:layout_width="0dp"
+            android:layout_height="match_parent"
+            android:layout_gravity="right"
+            android:layout_weight="2" />
+
+        <TextView
+            android:layout_width="0dp"
+            android:layout_height="match_parent"
+            android:layout_weight="3"
+            android:gravity="center"
+            android:text="全选"
+            android:textSize="20sp" />
+
+        <LinearLayout
+            android:id="@+id/shopping_line_price"
+            android:layout_width="0dp"
+            android:layout_height="match_parent"
+            android:layout_marginRight="15dp"
+            android:layout_weight="15"
+            android:gravity="right"
+            android:orientation="vertical">
+
+            <TextView
+                android:gravity="center"
+                android:id="@+id/shopping_sum"
+                android:layout_width="match_parent"
+                android:layout_height="0dp"
+                android:layout_weight="1"
+                android:text="合计：￥0"
+                android:textSize="20sp" />
+
+            <TextView
+                android:gravity="center"
+                android:layout_width="match_parent"
+                android:layout_height="0dp"
+                android:layout_weight="1"
+                android:text="不包含运费"
+                android:textSize="20sp" />
+        </LinearLayout>
+
+        <Button
+            android:id="@+id/shopp_btn"
+            android:layout_width="0dp"
+            android:layout_height="match_parent"
+            android:layout_weight="5"
+            android:background="#f04f11"
+            android:text="结算（0）" />
+    </LinearLayout>
+
+    <RelativeLayout
+        android:id="@+id/shoping_relative"
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-        android:text="@string/hello_blank_fragment" />
+        android:layout_above="@id/shopping_line"
+        android:layout_below="@id/shopping_editer">
 
-</FrameLayout>
+        <ImageView
+            android:id="@+id/shopping_realtive_image"
+            android:layout_width="150dp"
+            android:layout_height="150dp"
+            android:layout_centerHorizontal="true"
+            android:layout_marginTop="100dp"
+            android:src="@drawable/shopping_trolley_empty" />
+
+        <TextView
+            android:id="@+id/shopping_realtive_kong"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_below="@id/shopping_realtive_image"
+            android:layout_centerHorizontal="true"
+            android:layout_marginTop="10dp"
+            android:text="购物车还是空的哦" />
+        <TextView
+            android:id="@+id/shopping_realtive_qu"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_below="@id/shopping_realtive_kong"
+            android:layout_centerHorizontal="true"
+            android:layout_marginTop="10dp"
+            android:text="快去逛一逛吧" />
+
+        <TextView
+            android:id="@+id/shopping_relative_guang"
+            android:background="#f06"
+            android:layout_width="150dp"
+            android:layout_height="50dp"
+            android:layout_below="@id/shopping_realtive_qu"
+            android:layout_centerHorizontal="true"
+            android:layout_marginTop="10dp"
+            android:gravity="center"
+            android:text="逛一逛" />
+    </RelativeLayout>
+
+    <android.support.v7.widget.RecyclerView
+        android:id="@+id/shopping_recycler"
+        android:layout_above="@id/shopping_line"
+        android:layout_below="@id/shopping_editer"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"></android.support.v7.widget.RecyclerView>
+</RelativeLayout>

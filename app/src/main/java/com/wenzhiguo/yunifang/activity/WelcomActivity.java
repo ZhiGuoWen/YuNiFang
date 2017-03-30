@@ -26,9 +26,9 @@ public class WelcomActivity extends AppCompatActivity {
     private RelativeLayout mRela;
     private int[] mTu = new int[]{R.drawable.guidance_1, R.drawable.guidance_2
             , R.drawable.guidance_3, R.drawable.guidance_4,
-            R.drawable.guidance_5,R.drawable.ldy};
+            R.drawable.guidance_5, R.drawable.ldy};
     private SharedPreferences sp;
-    private Handler handler = new Handler(){
+    private Handler handler = new Handler() {
         @Override
         public void handleMessage(Message msg) {
             super.handleMessage(msg);
@@ -37,6 +37,7 @@ public class WelcomActivity extends AppCompatActivity {
             finish();
         }
     };
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -56,9 +57,9 @@ public class WelcomActivity extends AppCompatActivity {
         if ("0".equals(isOne)) {
             setViewPager();
             SharedPreferences.Editor edit = sp.edit();
-            edit.putString("isOne","1");
+            edit.putString("isOne", "1");
             edit.commit();
-        }else {
+        } else {
             ImageView mImage = new ImageView(WelcomActivity.this);
             mImage.setLayoutParams(new ViewGroup.LayoutParams(
                     ViewGroup.LayoutParams.MATCH_PARENT,
@@ -67,7 +68,7 @@ public class WelcomActivity extends AppCompatActivity {
             mImage.setImageResource(R.drawable.ldy);
             mRela.addView(mImage);
             //发送跳转延迟3秒
-            handler.sendEmptyMessageDelayed(0,3000);
+            handler.sendEmptyMessageDelayed(0, 3000);
         }
     }
 
@@ -110,11 +111,12 @@ public class WelcomActivity extends AppCompatActivity {
 
             @Override
             public void onPageSelected(int position) {
-                if (position == mTu.length-1) {
+                if (position == mTu.length - 1) {
                     //显示textview
                     mTextView.setVisibility(View.VISIBLE);
                     //发送跳转延迟3秒
-                    handler.sendEmptyMessageDelayed(0,3000);
+                    handler.sendEmptyMessageDelayed(0, 3000);
+                    //如果立即体验将把handler发送内容移除
                     mTextView.setOnClickListener(new View.OnClickListener() {
                         @Override
                         public void onClick(View v) {

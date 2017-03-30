@@ -11,7 +11,7 @@ import okhttp3.Response;
 
 /**
  * Created by dell on 2017/3/16.
- * 请求数据,调用此方法返回
+ * 请求数据,定义接口将数据返回出去
  */
 
 public class OkHttp {
@@ -28,7 +28,6 @@ public class OkHttp {
         okhttp3.Call call = mOkHttpClient.newCall(request);
         //请求加入调度
         call.enqueue(new Callback(){
-
 
             @Override
             public void onFailure(Call call, IOException e) {

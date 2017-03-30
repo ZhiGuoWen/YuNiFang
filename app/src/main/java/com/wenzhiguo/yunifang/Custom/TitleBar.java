@@ -1,6 +1,5 @@
 package com.wenzhiguo.yunifang.Custom;
 
-
 import android.content.Context;
 import android.content.res.TypedArray;
 import android.graphics.Color;
@@ -28,13 +27,12 @@ public class TitleBar extends RelativeLayout {
         super(context, attrs);
         View view = LayoutInflater.from(context).inflate(R.layout.titlebar_item, this, true);
 
-        ImageView image= (ImageView) view.findViewById(R.id.title_image);
+        ImageView image = (ImageView) view.findViewById(R.id.title_image);
         TextView text = (TextView) view.findViewById(R.id.title_text);
         TextView search = (TextView) view.findViewById(R.id.title_search);
-        //ImageView search = (ImageView) view.findViewById(R.id.title_search);
 
         TypedArray typedArray = context.getResources().obtainAttributes(attrs, R.styleable.TitleBar);
-        if (typedArray != null){
+        if (typedArray != null) {
             //search
             int colors = typedArray.getColor(R.styleable.TitleBar_mTextSearchBackgroup, Color.WHITE);
             search.setBackgroundColor(colors);
@@ -44,6 +42,8 @@ public class TitleBar extends RelativeLayout {
             search.setText(strings);
             float dimensionsize = typedArray.getDimension(R.styleable.TitleBar_mTextSearchSize, 20);
             search.setTextSize(dimensionsize);
+            int pading =(int)typedArray.getDimension(R.styleable.TitleBar_mTextSearchPadding, 20);
+            search.setPadding(pading,pading,pading,pading);
             //imageview
             Drawable drawable = typedArray.getDrawable(R.styleable.TitleBar_img_imageView);
             image.setImageDrawable(drawable);

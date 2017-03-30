@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:id="@+id/activity_home_web_view"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context="com.wenzhiguo.yunifang.activity.HomeWebViewActivity">
+
+    <com.wenzhiguo.yunifang.Custom.TitleBar
+        android:id="@+id/web_title"
+        android:layout_width="match_parent"
+        app:img_imageView="@drawable/back_normal"
+        android:background="#f0f"
+        app:mText="标题"
+        android:layout_height="50dp"></com.wenzhiguo.yunifang.Custom.TitleBar>
+    <WebView
+        android:id="@+id/webview"
+        android:layout_below="@id/web_title"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"></WebView>
+</RelativeLayout>

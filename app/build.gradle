@@ -16,6 +16,11 @@ android {
             minifyEnabled false
             proguardFiles getDefaultProguardFile('proguard-android.txt'), 'proguard-rules.pro'
         }
+        sourceSets {
+            main {
+                jniLibs.srcDirs = ['libs']
+            }
+        }
     }
 }
 
@@ -25,6 +30,8 @@ dependencies {
         exclude group: 'com.android.support', module: 'support-annotations'
     })
     compile project(":pulltorefresh")
+    compile 'org.litepal.android:core:1.5.1'
+    compile 'cn.yipianfengye.android:zxing-library:2.1'
     compile 'com.android.support:appcompat-v7:25.1.0'
     compile 'com.android.support:recyclerview-v7:25.1.0'
     compile 'com.squareup.okhttp3:okhttp:3.6.0'
